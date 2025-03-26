@@ -48,7 +48,7 @@ Daily Touch is a modern e-commerce platform built with React, TypeScript, and No
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/daily-touch.git
+git clone https://github.com/eliudmichira/daily-touch.git
 cd daily-touch
 ```
 
