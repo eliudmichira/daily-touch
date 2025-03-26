@@ -1,0 +1,197 @@
+/* Reset padding that interferes with our layout */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Dark mode transitions */
+.dark {
+  color-scheme: dark;
+}
+
+/* Smooth transitions for background and text colors */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Dark Mode Handling */
+html.dark body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Etsy-like styling */
+.etsy-card {
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dark .etsy-card {
+  background-color: hsl(var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.etsy-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.dark .etsy-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge Styling */
+.etsy-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: #FEF7CD;
+  color: #89662B;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark .etsy-badge {
+  background-color: #89662B;
+  color: #FEF7CD;
+}
+
+/* Titles & Prices */
+.etsy-title {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  font-family: 'Playfair Display', serif;
+  transition: color 0.3s;
+}
+
+.etsy-price {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  transition: color 0.3s;
+}
+
+/* Buttons */
+.etsy-button {
+  border-radius: 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.etsy-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Category Badges */
+.category-badge {
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.category-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Collection Cards */
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.collection-card img {
+  transition: transform 0.5s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Featured Product Styles */
+.featured-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #FDE1D3;
+  color: #A05C37;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark .featured-tag {
+  background-color: #A05C37;
+  color: #FDE1D3;
+}
+
+/* Animations for Headers and Sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* Animated Spinning Logo */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .etsy-card {
+    border-radius: 8px;
+  }
+  
+  .featured-tag {
+    top: 8px;
+    left: 8px;
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
